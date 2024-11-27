@@ -1,0 +1,52 @@
+{
+  "tags": [
+    { "id": 1, "name": "React", "colorHex": "#22AAFF" },
+    { "id": 2, "name": "Figma", "colorHex": "#FFAA11" },
+    { "id": 3, "name": "NPM", "colorHex": "#22FF11" }
+  ],
+  "lists": [
+    {
+      "id": 1,
+      "name": "List1",
+      "description": "lorem",
+      "resources": [1, 2, 3],
+      "date": 1723819
+    },
+    {
+      "id": 2,
+      "name": "List2",
+      "description": "lorem",
+      "resources": [2, 3],
+      "date": 1723819
+    }
+  ],
+  "resources": [
+    {
+      "id": 1,
+      "name": "Resource1",
+      "resourceUrl": "https://www.google.com",
+      "thumbnailUrl": "https://image.url",
+      "lists": [1],
+      "tags": [1, 2, 3],
+      "date": 1983729837
+    },
+    {
+      "id": 2,
+      "name": "Resource2",
+      "resourceUrl": "https://www.google.com",
+      "thumbnailUrl": "https://image.url",
+      "lists": [1, 2],
+      "tags": [1, 2, 3],
+      "date": 1983729837
+    },
+    {
+      "id": 3,
+      "name": "Resource3",
+      "resourceUrl": "https://www.google.com",
+      "thumbnailUrl": "https://image.url",
+      "lists": [1, 2],
+      "tags": [1, 2, 3],
+      "date": 1983729837
+    }
+  ]
+}
