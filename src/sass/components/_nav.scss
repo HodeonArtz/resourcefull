@@ -1,0 +1,9 @@
+.nav {
+  @include border;
+  background-color: $background-primary;
+  border-color: $border-primary;
+  border-radius: unset;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
