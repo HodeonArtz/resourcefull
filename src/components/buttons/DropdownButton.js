@@ -39,15 +39,16 @@ export function DropdownButton({
   }
 
   return (
-    <button
-      className={`dropdown-button--${color}`}
-      onClick={(event) => handleOnClick(event)}
-    >
-      {iconComponent}
-      <ArrowIcon />
-      <span className="dropdown-button__text">{text}</span>
-
+    <div className="dropdown-button__container">
+      <button
+        className={`dropdown-button--${color}`}
+        onClick={(event) => handleOnClick(event)}
+      >
+        {iconComponent}
+        <ArrowIcon />
+        <span className="dropdown-button__text">{text}</span>
+      </button>
       {isOpened && <ul className="dropdown-list">{children}</ul>}
-    </button>
+    </div>
   );
 }
