@@ -5,7 +5,18 @@ h3,
 h4,
 h5,
 h6,
+button,
 body {
   margin: unset;
   padding: unset;
+}
+button {
+  border: unset;
+  background-color: unset;
+  font-family: unset;
+  font-size: unset;
+}
+ul,
+ol {
+  list-style: none;
 }
