@@ -1,0 +1,16 @@
+.nav {
+  display: flex;
+  padding: 0.5rem 0;
+  align-items: center;
+  &__brand {
+    width: $aside-width;
+    padding: 0 $screen-px;
+  }
+  &__content {
+    display: flex;
+    flex-grow: 1;
+    align-self: stretch;
+    align-items: center;
+    padding: 0 $screen-px;
+  }
+}
