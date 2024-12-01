@@ -1,0 +1,132 @@
+@mixin border {
+  border-style: solid;
+  border-width: 0.09375rem;
+  border-radius: $border-radius;
+}
+@mixin bg-default($isInteractive: false) {
+  @include border;
+  color: $text-color;
+  border-color: $border-color-whiter;
+  background-color: $background-screen;
+  svg path {
+    &[fill] {
+      fill: $text-color;
+    }
+    &[stroke] {
+      stroke: $text-color;
+    }
+  }
+  @if ($isInteractive) {
+    &:hover {
+      color: lighten($text-color, 5%);
+      border-color: lighten($border-color-whiter, 5%);
+      background-color: lighten($background-screen, 5%);
+    }
+    &:active {
+      color: darken($text-color, 5%);
+      border-color: darken($border-color-whiter, 5%);
+      background-color: darken($background-screen, 5%);
+    }
+  }
+}
+@mixin bg-primary($isInteractive: false) {
+  @include border;
+  color: $text-color;
+  border-color: $border-primary;
+  background-color: $background-primary;
+  svg path {
+    &[fill] {
+      fill: $text-color;
+    }
+    &[stroke] {
+      stroke: $text-color;
+    }
+  }
+  @if ($isInteractive) {
+    &:hover {
+      color: lighten($text-color, 5%);
+      border-color: lighten($border-primary, 5%);
+      background-color: lighten($background-primary, 5%);
+    }
+    &:active {
+      color: darken($text-color, 5%);
+      border-color: darken($border-primary, 5%);
+      background-color: darken($background-primary, 5%);
+    }
+  }
+}
+@mixin bg-secondary($isInteractive: false) {
+  @include border;
+  color: $background-screen;
+  border-color: $border-secondary;
+  background-color: $background-secondary;
+  svg path {
+    &[fill] {
+      fill: $background-screen;
+    }
+    &[stroke] {
+      stroke: $background-screen;
+    }
+  }
+  @if ($isInteractive) {
+    &:hover {
+      color: lighten($background-screen, 5%);
+      border-color: lighten($border-secondary, 5%);
+      background-color: lighten($background-secondary, 5%);
+    }
+    &:active {
+      color: darken($background-screen, 5%);
+      border-color: darken($border-secondary, 5%);
+      background-color: darken($background-secondary, 5%);
+    }
+  }
+}
+@mixin bg-danger($isInteractive: false) {
+  @include border;
+  color: $background-screen;
+  border-color: $border-danger;
+  background-color: $background-danger;
+  svg path {
+    &[fill] {
+      fill: $background-screen;
+    }
+    &[stroke] {
+      stroke: $background-screen;
+    }
+  }
+  @if ($isInteractive) {
+    &:hover {
+      color: lighten($background-screen, 5%);
+      border-color: lighten($border-danger, 5%);
+      background-color: lighten($background-danger, 5%);
+    }
+    &:active {
+      color: darken($background-screen, 5%);
+      border-color: darken($border-danger, 5%);
+      background-color: darken($background-danger, 5%);
+    }
+  }
+}
+
+@mixin button-style {
+  @include bg-default;
+
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  display: flex;
+  gap: 1.25rem;
+  width: fit-content;
+  height: 2.125rem;
+  &--primary {
+    @include bg-primary(true);
+  }
+  &--secondary {
+    @include bg-secondary(true);
+  }
+  &--danger {
+    color: $background-screen;
+    border-color: $border-danger;
+    background-color: $background-danger;
+  }
+}

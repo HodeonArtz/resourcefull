@@ -13,8 +13,8 @@ export function DropdownItem({ handleOnClick, children }) {
 }
 
 export function DropdownButton({
-  text = "",
   iconComponent,
+  text = "",
   color = btnColors.primary,
   children, // specify DropdownListItem
 }) {
@@ -41,12 +41,14 @@ export function DropdownButton({
   return (
     <div className="dropdown-button__container">
       <button
-        className={`dropdown-button--${color}`}
+        className={`dropdown-button dropdown-button--${color}`}
         onClick={(event) => handleOnClick(event)}
       >
         {iconComponent}
         <ArrowIcon />
-        <span className="dropdown-button__text">{text}</span>
+        {text.trim() !== "" && (
+          <span className="dropdown-button__text">{text}</span>
+        )}
       </button>
       {isOpened && <ul className="dropdown-list">{children}</ul>}
     </div>
