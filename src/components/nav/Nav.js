@@ -6,7 +6,7 @@ export default function Nav() {
   return (
     <nav className="nav">
       <div className="nav__brand">
-        <h1 className="nav__logo">Resourcefull</h1>
+        <h1 className="nav__logo logo">Resourcefull</h1>
       </div>
       <div className="nav__content">
         <div className="nav__content-left">
