@@ -6,4 +6,9 @@
   border-top: none;
   border-left: none;
   border-right: none;
+
+  &__brand {
+    color: darken($color: $background-secondary, $amount: 30%);
+    user-select: none;
+  }
 }
