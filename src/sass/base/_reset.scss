@@ -21,6 +21,15 @@ button {
   font-size: unset;
   cursor: pointer;
 }
+input {
+  border: unset;
+  background-color: unset;
+  font-family: unset;
+  font-size: unset;
+  &:focus {
+    outline: unset;
+  }
+}
 ul,
 ol {
   list-style: none;

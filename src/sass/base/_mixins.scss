@@ -44,7 +44,27 @@
     }
   }
   @if ($isInteractive) {
-    @include interactive($text-color, $background-screen);
+    @include interactive(variables.$text-color, variables.$background-screen);
+  }
+}
+@mixin bg-input($isInteractive: false) {
+  @include border;
+  color: variables.$text-color;
+  border-color: variables.$border-color-whiter;
+  background-color: variables.$background-screen;
+  input::placeholder {
+    color: variables.$border-color-whiter;
+  }
+  svg path {
+    &[fill] {
+      fill: variables.$border-color-whiter;
+    }
+    &[stroke] {
+      stroke: variables.$border-color-whiter;
+    }
+  }
+  @if ($isInteractive) {
+    @include interactive(variables.$text-color, variables.$background-screen);
   }
 }
 @mixin bg-primary($isInteractive: false) {

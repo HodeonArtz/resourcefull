@@ -11,8 +11,8 @@ export default function Input({
       <input
         type={type}
         placeholder={children}
-        value={value}
-        onChange={handleOnChange}
+        // value={value}
+        // onChange={handleOnChange}
       />
     </div>
   );
