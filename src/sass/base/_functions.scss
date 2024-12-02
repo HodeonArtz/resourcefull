@@ -1,0 +1,6 @@
+@use "sass:math";
+@use "sass:color";
+@function first-color-lighter($color1, $color2) {
+  @return color.channel($color1, "lightness", $space: hsl) >
+    color.channel($color2, "lightness", $space: hsl);
+}

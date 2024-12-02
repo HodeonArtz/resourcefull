@@ -1,110 +1,107 @@
+@use "sass:color";
+@use "../base/functions";
+@use "../base/variables";
 @mixin border {
   border-style: solid;
   border-width: 0.09375rem;
-  border-radius: $border-radius;
+  border-radius: variables.$border-radius;
 }
+
+@mixin interactive($color-text, $bg-color) {
+  @if (functions.first-color-lighter($color-text, $bg-color)) {
+    &:hover {
+      color: color.adjust($color-text, $lightness: 5%);
+      background-color: color.adjust($bg-color, $lightness: 5%);
+    }
+    &:active {
+      color: color.adjust($color-text, $lightness: -5%);
+      background-color: color.adjust($bg-color, $lightness: -5%);
+    }
+  }
+  @if (not functions.first-color-lighter($color-text, $bg-color)) {
+    &:hover {
+      color: color.adjust($color-text, $lightness: -5%);
+      background-color: color.adjust($bg-color, $lightness: -5%);
+    }
+    &:active {
+      color: color.adjust($color-text, $lightness: 5%);
+      background-color: color.adjust($bg-color, $lightness: -3%);
+    }
+  }
+}
+
 @mixin bg-default($isInteractive: false) {
   @include border;
-  color: $text-color;
-  border-color: $border-color-whiter;
-  background-color: $background-screen;
+  color: variables.$text-color;
+  border-color: variables.$border-color-whiter;
+  background-color: variables.$background-screen;
   svg path {
     &[fill] {
-      fill: $text-color;
+      fill: variables.$text-color;
     }
     &[stroke] {
-      stroke: $text-color;
+      stroke: variables.$text-color;
     }
   }
   @if ($isInteractive) {
-    &:hover {
-      color: lighten($text-color, 5%);
-      border-color: lighten($border-color-whiter, 5%);
-      background-color: lighten($background-screen, 5%);
-    }
-    &:active {
-      color: darken($text-color, 5%);
-      border-color: darken($border-color-whiter, 5%);
-      background-color: darken($background-screen, 5%);
-    }
+    @include interactive($text-color, $background-screen);
   }
 }
 @mixin bg-primary($isInteractive: false) {
   @include border;
-  color: $text-color;
-  border-color: $border-primary;
-  background-color: $background-primary;
+  color: variables.$text-color;
+  border-color: variables.$border-primary;
+  background-color: variables.$background-primary;
   svg path {
     &[fill] {
-      fill: $text-color;
+      fill: variables.$text-color;
     }
     &[stroke] {
-      stroke: $text-color;
+      stroke: variables.$text-color;
     }
   }
   @if ($isInteractive) {
-    &:hover {
-      color: lighten($text-color, 5%);
-      border-color: lighten($border-primary, 5%);
-      background-color: lighten($background-primary, 5%);
-    }
-    &:active {
-      color: darken($text-color, 5%);
-      border-color: darken($border-primary, 5%);
-      background-color: darken($background-primary, 5%);
-    }
+    @include interactive(variables.$text-color, variables.$background-primary);
   }
 }
 @mixin bg-secondary($isInteractive: false) {
   @include border;
-  color: $background-screen;
-  border-color: $border-secondary;
-  background-color: $background-secondary;
+  color: variables.$background-screen;
+  border-color: variables.$border-secondary;
+  background-color: variables.$background-secondary;
   svg path {
     &[fill] {
-      fill: $background-screen;
+      fill: variables.$background-screen;
     }
     &[stroke] {
-      stroke: $background-screen;
+      stroke: variables.$background-screen;
     }
   }
   @if ($isInteractive) {
-    &:hover {
-      color: lighten($background-screen, 5%);
-      border-color: lighten($border-secondary, 5%);
-      background-color: lighten($background-secondary, 5%);
-    }
-    &:active {
-      color: darken($background-screen, 5%);
-      border-color: darken($border-secondary, 5%);
-      background-color: darken($background-secondary, 5%);
-    }
+    @include interactive(
+      variables.$background-screen,
+      variables.$background-secondary
+    );
   }
 }
 @mixin bg-danger($isInteractive: false) {
   @include border;
-  color: $background-screen;
-  border-color: $border-danger;
-  background-color: $background-danger;
+  color: variables.$background-screen;
+  border-color: variables.$border-danger;
+  background-color: variables.$background-danger;
   svg path {
     &[fill] {
-      fill: $background-screen;
+      fill: variables.$background-screen;
     }
     &[stroke] {
-      stroke: $background-screen;
+      stroke: variables.$background-screen;
     }
   }
   @if ($isInteractive) {
-    &:hover {
-      color: lighten($background-screen, 5%);
-      border-color: lighten($border-danger, 5%);
-      background-color: lighten($background-danger, 5%);
-    }
-    &:active {
-      color: darken($background-screen, 5%);
-      border-color: darken($border-danger, 5%);
-      background-color: darken($background-danger, 5%);
-    }
+    @include interactive(
+      variables.$background-screen,
+      variables.$background-danger
+    );
   }
 }
 
@@ -125,8 +122,8 @@
     @include bg-secondary(true);
   }
   &--danger {
-    color: $background-screen;
-    border-color: $border-danger;
-    background-color: $background-danger;
+    color: variables.$background-screen;
+    border-color: variables.$border-danger;
+    background-color: variables.$background-danger;
   }
 }

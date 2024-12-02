@@ -1,17 +1,18 @@
+@use "../base/variables";
 .nav {
   display: flex;
   padding: 0.5rem 0;
   align-items: center;
   &__brand {
-    width: $aside-width;
-    padding: 0 $screen-px;
+    width: variables.$aside-width;
+    padding: 0 variables.$screen-px;
   }
   &__content {
     display: flex;
     flex-grow: 1;
     align-self: stretch;
     align-items: center;
-    padding: 0 $screen-px;
+    padding: 0 variables.$screen-px;
     &-left,
     &-center,
     &-right {

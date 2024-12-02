@@ -1,14 +1,17 @@
+@use "sass:color";
+@use "../base/variables";
+@use "../base/mixins";
 .nav {
-  @include border;
-  background-color: $background-primary;
-  border-color: $border-primary;
+  @include mixins.border;
+  background-color: variables.$background-primary;
+  border-color: variables.$border-primary;
   border-radius: unset;
   border-top: none;
   border-left: none;
   border-right: none;
 
   &__brand {
-    color: darken($color: $background-secondary, $amount: 30%);
+    color: color.adjust(variables.$background-secondary, $lightness: -30%);
     user-select: none;
   }
 }

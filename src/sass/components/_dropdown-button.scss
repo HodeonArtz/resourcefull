@@ -1,17 +1,22 @@
+@use "../base/variables";
+@use "../base/mixins";
 .dropdown-button {
-  @include button-style;
   gap: 0.5rem;
+  @include mixins.button-style;
   &__container {
     width: fit-content;
     position: relative;
   }
 }
+
+@debug "La proporción de contraste es: #{contrast-ratio(variables.$text-color,variables.$background-screen)}";
+
 .dropdown-list {
-  @include bg-default;
+  @include mixins.bg-default;
   position: absolute;
   padding: 0.5rem;
   margin: 0.25rem 0;
-  border-color: $border-primary;
+  border-color: variables.$border-primary;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,6 +30,10 @@
       white-space: nowrap;
     }
     &__btn {
+      @include mixins.interactive(
+        variables.$text-color,
+        variables.$background-screen
+      );
       padding: 0.5rem;
       display: flex;
       gap: 0.625rem;
