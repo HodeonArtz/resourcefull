@@ -2,8 +2,10 @@ import { DropdownItem, DropdownButton } from "../buttons/DropdownButton";
 import { ReactComponent as AddIcon } from "../../assets/icons/add-outline-white.svg";
 import { ReactComponent as LinkIcon } from "../../assets/icons/link.svg";
 import { ReactComponent as ClipboardIcon } from "../../assets/icons/clipboard-outline.svg";
+import { ReactComponent as SearchIcon } from "../../assets/icons/search-grayed.svg";
 
 import * as btnColors from "../buttons/colors";
+import { TextInput } from "../form-inputs/TextInput";
 
 export default function Nav() {
   return (
@@ -17,17 +19,22 @@ export default function Nav() {
             color={btnColors.secondary}
             iconComponent={<AddIcon />}
           >
+            {/* TODO: add handlers */}
             <DropdownItem>
               <LinkIcon />
               <span className="dropdown-list__item__text">New resource</span>
             </DropdownItem>
+            {/* TODO: add handlers */}
             <DropdownItem>
               <ClipboardIcon />
               <span className="dropdown-list__item__text">New list</span>
             </DropdownItem>
           </DropdownButton>
         </div>
-        <div className="nav__content-center"></div>
+        <div className="nav__content-center">
+          {/* TODO: add handlers and values */}
+          <TextInput icon={<SearchIcon />}>Enter keywords...</TextInput>
+        </div>
         <div className="nav__content-right"></div>
       </div>
     </nav>
